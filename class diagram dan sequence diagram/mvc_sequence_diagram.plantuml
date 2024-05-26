@@ -1,0 +1,25 @@
+@startuml MVCsequence_diagram 2
+
+actor User
+
+participant MVCAPP
+participant Controller
+participant Model
+participant View
+participant JSpinnerChangeListener
+
+User -> MVCAPP: main()
+MVCAPP -> View: instantiate View()
+MVCAPP -> Model: instantiate Model(name)
+Model -> View: setView(view)
+MVCAPP -> Controller: instantiate Controller()
+Controller -> Model: add Model to models map
+MVCAPP -> View: display View
+
+User -> View: interact with spinner
+View -> JSpinnerChangeListener: stateChanged(event)
+JSpinnerChangeListener -> Controller: handleChange(modelName, spinnerName, value)
+Controller -> Model: setValue(key, value)
+Model -> View: update View 
+
+@enduml

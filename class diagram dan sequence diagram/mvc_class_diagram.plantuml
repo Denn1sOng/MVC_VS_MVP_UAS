@@ -1,0 +1,59 @@
+@startuml mvc_class_diagram
+
+class MVCAPP {
+    +main()
+}
+
+class Model {
+    -name : String
+    -values : Map<String, Integer>
+    -view : View
+    +Model(name: String)
+    +getName() : String
+    +setName(name: String)
+    +getValues() : Map<String, Integer>
+    +setValues(values: Map<String, Integer>)
+    +setValue(key: String, value: Integer)
+    +getValue(key: String) : Integer
+    +getView() : View
+    +setView(view: View)
+}
+
+class View {
+    -contentPane : JPanel
+    -modelName : String
+    -spinner001 : JSpinner
+    -spinner002 : JSpinner
+    -spinner003 : JSpinner
+    -spinner001b : JSpinner
+    -spinner002b : JSpinner
+    -spinner003b : JSpinner
+    +View()
+    +getModelName() : String
+    +setModelName(modelName: String)
+}
+
+class JSpinnerChangeListener {
+    -isListening : boolean
+    +stateChanged(ChangeEvent event)
+}
+
+class Controller {
+    -models : Map<String, Model>
+    +handleChange(modelName: String, spinnerName: String, value: int)
+    +getModels() : Map<String, Model>
+    +setModels(models: Map<String, Model>)
+}
+
+MVCAPP -> Model
+MVCAPP -> View
+MVCAPP -> Controller
+
+Controller --> Model : manages
+Model --> View : has
+
+View o-- JSpinnerChangeListener
+
+JSpinnerChangeListener ..> Controller : uses
+
+@enduml

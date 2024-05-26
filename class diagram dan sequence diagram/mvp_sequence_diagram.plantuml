@@ -1,0 +1,24 @@
+@startuml mvp_sequence_diagram 2
+
+actor User
+skinparam style strictuml
+participant MVPAPP
+participant Presenter
+participant Model
+participant View
+participant JSpinnerChangeListener
+
+User -> MVPAPP: main()
+MVPAPP -> View: instantiate View()
+MVPAPP -> Model: instantiate Model(name)
+MVPAPP -> Presenter: instantiate Presenter(model, view)
+Presenter -> View: set presenter as listener 
+MVPAPP -> View: display View
+
+User -> View: interact with spinner
+View -> JSpinnerChangeListener: stateChanged(event)
+JSpinnerChangeListener -> Presenter: handleChange(spinnerName, value)
+Presenter -> Model: setValue(key, value)
+Presenter -> View: update View 
+
+@enduml

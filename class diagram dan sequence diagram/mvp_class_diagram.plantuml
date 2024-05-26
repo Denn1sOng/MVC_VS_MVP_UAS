@@ -1,0 +1,49 @@
+@startuml Lavender
+
+class MVPAPP{
+    +main()
+}
+class Model{
+    -name : String
+    -values : Map<String,Integer>
+    +Model(String name)
+    +getName() : String
+    +setName(String name)
+    +getValues() : Map<String,Integer>
+    +setValues(Map<String,Integer> values)
+    +setValue(String key, int value)
+    +getValue(String key)
+}
+
+class View {
+    -contentPane : JPanel
+    -spinner001 : JSpinner
+    -spinner002 : JSpinner
+    -spinner003 : JSpinner
+    -spinner001b : JSpinner
+    -spinner002b : JSpinner
+    -spinner003b : JSpinner
+    +View()
+    +setChangeListener(ChangeListener presenter)
+}
+
+class Presenter{
+    -model : Model
+    -view : View
+    +getModel() : Model
+    +updateModel()
+    +setModel(Model model)
+    +getView() : View
+    +setView(View view)
+    +stateChanged(ChangeEvent event)
+}
+
+MVPAPP -> Model
+MVPAPP -> View
+MVPAPP -> Presenter
+
+Presenter --> Model
+Presenter --> View
+View -> Presenter : setChangeListener
+
+@enduml
