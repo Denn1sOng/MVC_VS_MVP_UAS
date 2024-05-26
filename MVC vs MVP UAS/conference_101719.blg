@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: conference_101719.aux
+Reallocating 'name_of_file' (item size: 1) to 7 items.
+The style file: ieeetr.bst
+Reallocating 'name_of_file' (item size: 1) to 10 items.
+Database file #1: reference.bib
+Warning--empty journal in rustagi2022mvc
+Warning--empty booktitle in Lappalainen2017APL
+You've used 8 entries,
+            1876 wiz_defined-function locations,
+            523 strings with 4704 characters,
+and the built_in function-call counts, 1750 in all, are:
+= -- 170
+> -- 56
+< -- 0
++ -- 22
+- -- 14
+* -- 112
+:= -- 259
+add.period$ -- 8
+call.type$ -- 8
+change.case$ -- 8
+chr.to.int$ -- 0
+cite$ -- 10
+duplicate$ -- 101
+empty$ -- 186
+format.name$ -- 14
+if$ -- 424
+int.to.chr$ -- 0
+int.to.str$ -- 8
+missing$ -- 8
+newline$ -- 27
+num.names$ -- 8
+pop$ -- 32
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 52
+stack$ -- 0
+substring$ -- 88
+swap$ -- 28
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 2
+while$ -- 20
+width$ -- 9
+write$ -- 75
+(There were 2 warnings)
